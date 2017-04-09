@@ -1,0 +1,14 @@
+{
+  "name": "darwin-js",
+  "version": "0.1.0",
+  "description": "A simple genetic algorithm framework for Node.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Jerry Hardee <hardeejj9@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
