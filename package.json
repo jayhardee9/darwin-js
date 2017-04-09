@@ -1,6 +1,6 @@
 {
   "name": "darwin-js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple genetic algorithm framework for Node.",
   "main": "lib/index.js",
   "scripts": {
@@ -15,5 +15,14 @@
     "type": "git",
     "url": "https://github.com/jayhardee9/darwin-js.git"
   },
-  "bugs": "https://github.com/jayhardee9/darwin-js/issues"
+  "bugs": "https://github.com/jayhardee9/darwin-js/issues",
+  "keywords": [
+    "genetic",
+    "algorithm",
+    "ga",
+    "gene",
+    "chromosome",
+    "evolution",
+    "evolve"
+  ]
 }
