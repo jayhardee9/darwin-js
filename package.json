@@ -1,6 +1,6 @@
 {
   "name": "darwin-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple genetic algorithm framework for Node.",
   "main": "lib/index.js",
   "scripts": {
@@ -10,5 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "mocha": "^3.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jayhardee9/darwin-js.git"
+  },
+  "bugs": "https://github.com/jayhardee9/darwin-js/issues"
 }
