@@ -79,5 +79,10 @@ module.exports = {
     return fitness >= targetString.length * (alphabet.length - 1)
   },
 
+  stats: function (stats) {
+    console.log('%d,%d,%s', stats.maxFitness, stats.meanFitness,
+      stats.bestIndividual.toString())
+  },
+
   elitist: true
 }
