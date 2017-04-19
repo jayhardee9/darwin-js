@@ -17,9 +17,12 @@ var ga = require('darwin-js')
 
 // Implement on your own
 var options = {
+  // Always copy over best individual without modification
+  // to the next generation.
+  elitism: true,
   fitness: (individual) => { 
     // You have the option of returning a Promise here, if
-    // G.A. needs to reach out to the user, say, for a 
+    // G.A. needs to asynchronously reach out to the user, say, for a 
     // subjective rating.
     return fitness
   },
@@ -43,6 +46,10 @@ var options = {
     // Return true if fitness is high enough. Will
     // terminate G.A. even if it hasn't iterated 10000 times.
     return ...
+  },
+  stats: (fitnesses, best) => {
+    console.log("Fitnesses of current generation: " + fitnesses)
+    console.log("Best performing individual: %j", best)
   }
 }
 
@@ -57,4 +64,4 @@ ga.run(options).then((result) => {
 ```
 
 # API
-TODO. See tests for an example for now.
+TODO. See tests for a complete example for now.
