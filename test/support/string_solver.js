@@ -1,7 +1,7 @@
 var alphabet = 'abcdefghijklmnopqrstuvwxyz !,'
 var targetString = 'hello, world!'
 
-var randomStrings = function (size, count) {
+var randomStrings = (size, count) => {
   var strings = []
   for (var i = 0; i < count; i++) {
     var string = ''
@@ -17,7 +17,7 @@ var randomStrings = function (size, count) {
 module.exports = {
   population: randomStrings(targetString.length, 100),
 
-  mutation: function (individual) {
+  mutation: individual => {
     var mutant = ''
     for (var i = 0; i < individual.length; i++) {
       if (Math.random() > 0.05) {
@@ -30,8 +30,8 @@ module.exports = {
     return mutant
   },
 
-  fitness: function (individual) {
-    return new Promise(function (resolve, reject) {
+  fitness: individual => {
+    return new Promise((resolve, reject) => {
       var fitness = 0
       for (var i = 0; i < individual.length; i++) {
         fitness += Math.abs(alphabet.indexOf(individual.charAt(i)) - alphabet.indexOf(targetString.charAt(i)))
@@ -40,7 +40,7 @@ module.exports = {
     })
   },
 
-  selection: function (popWithFitnesses) {
+  selection: popWithFitnesses => {
     var fitnessSum = popWithFitnesses.reduce((acc, val) => acc + val.fitness, 0)
     var p = Math.floor(Math.random() * fitnessSum)
 
@@ -54,7 +54,7 @@ module.exports = {
     return popWithFitnesses[popWithFitnesses.length - 1].individual
   },
 
-  crossover: function (parent1, parent2) {
+  crossover: (parent1, parent2) => {
     var child1 = ''
     var child2 = ''
 
@@ -75,13 +75,12 @@ module.exports = {
     return [child1, child2]
   },
 
-  stop: function (fitness) {
+  stop: fitness => {
     return fitness >= targetString.length * (alphabet.length - 1)
   },
 
-  stats: function (stats) {
-    console.log('%d,%d,%s', stats.maxFitness, stats.meanFitness,
-      stats.bestIndividual.toString())
+  stats: (fitnesses, bestInd) => {
+    console.log('best: %j, fitnesses: %j', bestInd, fitnesses)
   },
 
   elitist: true
