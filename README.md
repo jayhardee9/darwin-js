@@ -19,7 +19,7 @@ var ga = require('darwin-js')
 var options = {
   // Always copy over best individual without modification
   // to the next generation.
-  elitism: true,
+  elitist: true,
   fitness: (individual) => { 
     // You have the option of returning a Promise here, if
     // G.A. needs to asynchronously reach out to the user, say, for a 
